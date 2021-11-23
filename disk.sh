@@ -28,7 +28,7 @@ mkdir /mnt/boot
 mount /dev/ArchVol/ArchHome /mnt/home
 mount /dev/sda1 /mnt/boot
 sed -ire 's/block/block lvm2/' /etc/mkinitcpio.conf
-pacstrap -i /mnt base linux linux-firmware nano xfsprogs lvm2 <<EOF
+pacstrap -i /mnt base linux linux-firmware nano xfsprogs lvm2 grub efibootmgr <<EOF
 
 
 EOF
