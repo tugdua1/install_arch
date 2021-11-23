@@ -14,6 +14,9 @@ pacman -S gnome gnome-extra <<EOF
 
 
 
+
+
+
 EOF
 touch /etc/X11/xorg.conf.d/00-keyboard.conf
 echo 'Section "InputClass"' >> /etc/X11/xorg.conf.d/00-keyboard.conf
