@@ -1,8 +1,10 @@
 #!/bin/bash
-useradd theo
+read -p "Choisissez un nom d'utilisateur" name
+read -p "Choisissez un mot de passe" -s mdp
+useradd $name
 passwd theo <<EOF
-password
-password
+$mdp
+$mdp
 EOF
 groupadd sudo
 gpasswd -a theo sudo
