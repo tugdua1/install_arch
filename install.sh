@@ -24,6 +24,7 @@ mount /dev/sda1 /mnt/boot
 sed -ire 's/block/block lvm2/' /etc/mkinitcpio.conf
 pacstrap -i /mnt base linux linux-firmware nano xfsprogs lvm2
 genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
 sed -ire 's/#fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen
