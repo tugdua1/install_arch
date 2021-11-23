@@ -2,12 +2,12 @@
 read -p "Choisissez un nom d'utilisateur" name
 read -p "Choisissez un mot de passe" -s mdp
 useradd $name
-passwd theo <<EOF
+passwd $name <<EOF
 $mdp
 $mdp
 EOF
 groupadd sudo
-gpasswd -a theo sudo
+gpasswd -a $name sudo
 systemctl start dhcpcd
 systemctl enable dhcpcd
 pacman -S gnome gnome-extra <<EOF
