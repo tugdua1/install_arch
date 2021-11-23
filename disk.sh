@@ -22,9 +22,9 @@ lvcreate -l 100%FREE ArchVol -n ArchHome
 mkfs.fat -F 32 /dev/sda1
 mkfs.xfs /dev/ArchVol/ArchRacine
 mkfs.xfs /dev/ArchVol/ArchHome
-mount /dev/archVol/ArchRacine /mnt
+mount /dev/ArchVol/ArchRacine /mnt
 mkdir /mnt/home
 mkdir /mnt/boot
-mount /dev/archVol/ArchHome /mnt/home
+mount /dev/ArchVol/ArchHome /mnt/home
 mount /dev/sda1 /mnt/boot
 sed -ire 's/block/block lvm2/' /etc/mkinitcpio.conf
