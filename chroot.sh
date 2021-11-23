@@ -15,10 +15,13 @@ passwd <<EOF
 password
 password
 EOF
-pacman -Sy grub
-pacman -Sy efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+pacman -Sy grub <<EOF
 
+EOF
+pacman -Sy efibootmgr <<EOF
+
+EOF
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 exit
 reboot
