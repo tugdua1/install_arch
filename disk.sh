@@ -33,3 +33,4 @@ pacstrap -i /mnt base linux linux-firmware nano xfsprogs lvm2 <<EOF
 
 EOF
 genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
