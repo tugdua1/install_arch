@@ -20,8 +20,8 @@ vgcreate ArchVol /dev/sda2
 lvcreate -L 2G ArchVol -n ArchRacine
 lvcreate -l 100%FREE ArchVol -n ArchHome
 mkfs.fat -F 32 /dev/sda1
-mkfs.xfs /dev/ArchVol/ArchRacine
-mkfs.xfs /dev/ArchVol/ArchHome
+mkfs.ext4 /dev/ArchVol/ArchRacine
+mkfs.ext4 /dev/ArchVol/ArchHome
 mount /dev/ArchVol/ArchRacine /mnt
 mkdir /mnt/home
 mkdir /mnt/boot
