@@ -23,6 +23,8 @@ mount /dev/archVol/ArchHome /mnt/home
 mount /dev/sda1 /mnt/boot
 sed -ire 's/block/block lvm2/' /etc/mkinitcpio.conf
 pacstrap -i /mnt base linux linux-firmware nano xfsprogs lvm2
+
+
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
