@@ -43,3 +43,16 @@ touch /etc/vconsole.conf
 echo "KEYMAP=fr-latin1" >> /etc/vconsole.conf
 touch /etc/hostname
 echo "archlinuxlvm" >> /etc/hostname
+pacman -Sy dhcpcd
+mkinitcpio -p linux
+passwd <<EOF
+password
+password
+EOF
+pacman -Sy grub
+pacman -Sy efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+reboot
