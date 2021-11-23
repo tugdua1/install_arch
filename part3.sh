@@ -29,3 +29,4 @@ pacman -S sudo <<EOF
 
 EOF
 systemctl enable gdm
+reboot
