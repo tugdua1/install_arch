@@ -17,7 +17,7 @@ Y
 EOF
 pvcreate /dev/sda2
 vgcreate ArchVol /dev/sda2
-lvcreate -L 2G ArchVol -n ArchRacine
+lvcreate -L 10G ArchVol -n ArchRacine
 lvcreate -l 100%FREE ArchVol -n ArchHome
 mkfs.fat -F 32 /dev/sda1
 mkfs.ext4 /dev/ArchVol/ArchRacine
