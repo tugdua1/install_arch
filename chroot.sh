@@ -12,6 +12,7 @@ echo "archlinuxlvm" >> /etc/hostname
 pacman -S dhcpcd <<EOF
 
 EOF
+sed -ire 's/block/block lvm2/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 passwd <<EOF
 password
