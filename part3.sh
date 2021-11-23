@@ -28,5 +28,6 @@ echo 'EndSection' >> /etc/X11/xorg.conf.d/00-keyboard.conf
 pacman -S sudo <<EOF
 
 EOF
+sed -i 's/# %sudo/%sudo/' /etc/sudoers
 systemctl enable gdm
 reboot
