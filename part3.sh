@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Choisissez un nom d'utilisateur" name
-read -p "Choisissez un mot de passe" -s mdp
+read -p "Choisissez un nom d'utilisateur : " name
+read -p "Choisissez un mot de passe : " -s mdp
 useradd $name
 passwd $name <<EOF
 $mdp
@@ -22,5 +22,7 @@ echo '       MatchIsKeyboard        "on"' >> /etc/X11/xorg.conf.d/00-keyboard.co
 echo '       Option "XkbLayout"     "fr"' >> /etc/X11/xorg.conf.d/00-keyboard.conf
 echo '       Option "XkbOptions"    "grp:shifts_toggle"' >> /etc/X11/xorg.conf.d/00-keyboard.conf
 echo 'EndSection' >> /etc/X11/xorg.conf.d/00-keyboard.conf
-pacman -S sudo
+pacman -S sudo <<EOF
+
+EOF
 systemctl enable gdm
