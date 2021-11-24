@@ -1,7 +1,7 @@
 #!/bin/bash
 read -p "Choisissez un nom d'utilisateur : " name
 read -p "Choisissez un mot de passe : " -s mdp
-useradd $name
+useradd -m $name
 passwd $name <<EOF
 $mdp
 $mdp
