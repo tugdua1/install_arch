@@ -13,6 +13,7 @@ pacman -S dhcpcd <<EOF
 
 EOF
 sed -ire 's/block/block lvm2/' /etc/mkinitcpio.conf
+sed -ire 's/keyboard/keyboard keymap/' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 passwd <<EOF
 password
