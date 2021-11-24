@@ -7,7 +7,6 @@ $mdp
 $mdp
 EOF
 gpasswd -a $name wheel
-systemctl start dhcpcd
 systemctl enable dhcpcd
 pacman -S gnome gnome-extra <<EOF
 
