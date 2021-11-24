@@ -28,4 +28,10 @@ pacman -S sudo <<EOF
 EOF
 sed -i 's/# %wheel/%wheel/' /etc/sudoers
 systemctl enable gdm
+pacman -S code<<EOF
+
+EOF
+pacman -S devtools<<EOF
+
+EOF
 reboot
