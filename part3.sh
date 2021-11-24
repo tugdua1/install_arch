@@ -6,8 +6,7 @@ passwd $name <<EOF
 $mdp
 $mdp
 EOF
-groupadd sudo
-gpasswd -a $name sudo
+gpasswd -a $name wheel
 systemctl start dhcpcd
 systemctl enable dhcpcd
 pacman -S gnome gnome-extra <<EOF
@@ -28,6 +27,6 @@ echo 'EndSection' >> /etc/X11/xorg.conf.d/00-keyboard.conf
 pacman -S sudo <<EOF
 
 EOF
-sed -i 's/# %sudo/%sudo/' /etc/sudoers
+sed -i 's/# %wheel/%wheel/' /etc/sudoers
 systemctl enable gdm
 reboot
