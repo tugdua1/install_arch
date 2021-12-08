@@ -32,6 +32,6 @@ pacstrap -i /mnt base linux linux-firmware nano xfsprogs lvm2 grub efibootmgr <<
 
 EOF
 genfstab -U /mnt >> /mnt/etc/fstab
-cp install_arch/part2.sh /mnt/part2.sh
-cp install_arch/part3.sh /mnt/part3.sh
+cp install_arch/chroot.sh /mnt/chroot.sh
+cp install_arch/gnome.sh /mnt/gnome.sh
 arch-chroot /mnt
