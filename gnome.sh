@@ -8,15 +8,15 @@ source ./credentials.env
 #$mdp
 #EOF
 
-useradd -m $USER
-passwd $USER <<EOF
+useradd -m $USERN
+passwd $USERN <<EOF
 $PASSWORD
 $PASSWORD
 EOF
 
 #gpasswd -a $name wheel
 
-gpasswd -a $USER wheel
+gpasswd -a $USERN wheel
 
 systemctl enable dhcpcd
 pacman -S gnome gnome-extra <<EOF
