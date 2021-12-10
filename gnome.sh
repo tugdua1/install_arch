@@ -26,7 +26,8 @@ echo 'EndSection' >> /etc/X11/xorg.conf.d/00-keyboard.conf
 pacman -S sudo <<EOF
 
 EOF
-sed -i 's/# %wheel/%wheel/' /etc/sudoers
+sed -ire 's/#.*\(%wheel.*NOPASSWD.*\)/\1/' /etc/sudoers
+#sed -ire 's/#.*\(%wheel.*\)/\1/' /etc/sudoers
 systemctl enable gdm
 pacman -S code<<EOF
 
