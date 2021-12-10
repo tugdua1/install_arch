@@ -9,7 +9,7 @@ source ./credentials.env
 #EOF
 
 useradd -m $USER
-passwd <<EOF
+passwd $USER <<EOF
 $PASSWORD
 $PASSWORD
 EOF
