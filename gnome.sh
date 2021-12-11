@@ -1,22 +1,22 @@
 #!/bin/bash
-source ./credentials.env
-#read -p "Choisissez un nom d'utilisateur : " name
-#read -p "Choisissez un mot de passe : " -s mdp
-#useradd -m $name
-#passwd $name <<EOF
-#$mdp
-#$mdp
-#EOF
-
-useradd -m $USERN
-passwd $USERN <<EOF
-$PASSWORD
-$PASSWORD
+#source ./credentials.env
+read -p "Choisissez un nom d'utilisateur : " name
+read -p "Choisissez un mot de passe : " -s mdp
+useradd -m $name
+passwd $name <<EOF
+$mdp
+$mdp
 EOF
 
-#gpasswd -a $name wheel
+#useradd -m $USERN
+#passwd $USERN <<EOF
+#$PASSWORD
+#$PASSWORD
+#EOF
 
-gpasswd -a $USERN wheel
+gpasswd -a $name wheel
+
+#gpasswd -a $USERN wheel
 
 systemctl enable dhcpcd
 pacman -S gnome gnome-extra <<EOF
